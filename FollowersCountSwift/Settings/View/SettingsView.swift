@@ -65,10 +65,10 @@ struct SettingsView: View {
                                 Text("Ver planes de suscripción")
                                     .font(.subheadline)
                                     .fontWeight(.semibold)
-                                    .foregroundColor(.white)
+                                    .foregroundColor(.frontColor)
                                 Spacer()
                                 Image(systemName: "arrow.right")
-                                    .foregroundColor(.white)
+                                    .foregroundColor(.frontColor)
                             }
                             .padding()
                             .frame(maxWidth: .infinity)

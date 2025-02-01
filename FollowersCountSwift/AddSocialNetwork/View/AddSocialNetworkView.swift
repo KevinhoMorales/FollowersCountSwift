@@ -57,7 +57,7 @@ struct AddSocialNetworkView: View {
                         .edgesIgnoringSafeArea(.all)
                         .overlay(
                             ProgressView()
-                                .progressViewStyle(CircularProgressViewStyle(tint: .white))
+                                .progressViewStyle(CircularProgressViewStyle(tint: .frontColor))
                                 .scaleEffect(1.5)
                         )
                 }

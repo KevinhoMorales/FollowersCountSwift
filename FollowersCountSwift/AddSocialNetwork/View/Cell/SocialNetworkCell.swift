@@ -20,7 +20,7 @@ struct SocialNetworkCell: View {
                     .resizable()
                     .scaledToFit()
                     .frame(width: 30, height: 30)
-                    .foregroundColor(.white)
+                    .foregroundColor(.frontColor)
                     .padding(10)
                     .background(Color.backColor) // Usamos .backColor (asegúrate de que esté definido en tus assets)
                     .clipShape(Circle())

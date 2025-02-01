@@ -17,7 +17,10 @@ struct AddSocialNetworkView: View {
             ZStack {
                 List {
                     ForEach(viewModel.socialNetworks) { network in
-                        SocialNetworkCell(network: network) {
+                        SocialNetworkCell(
+                            network: network,
+                            isAdded: homeViewModel.socialNetworks.contains { $0.name == network.name } // Verifica si ya está agregada
+                        ) {
                             viewModel.selectedNetwork = network
                             viewModel.showAlert = true
                         }
@@ -35,9 +38,9 @@ struct AddSocialNetworkView: View {
                         viewModel.selectedNetwork = nil
                     }
                     Button("Agregar", role: .none) {
-                        if viewModel.selectedNetwork != nil {
+                        if let network = viewModel.selectedNetwork {
                             viewModel.confirmAddNetwork { updatedNetwork in
-                                homeViewModel.addSocialNetwork(updatedNetwork) // Pasa la red social actualizada
+                                homeViewModel.validateAndAddSocialNetwork(updatedNetwork) // Usa validateAndAddSocialNetwork
                                 dismiss()
                             }
                         }

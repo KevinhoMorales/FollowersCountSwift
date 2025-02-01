@@ -9,6 +9,7 @@ import SwiftUI
 
 struct SocialNetworkCell: View {
     let network: SocialNetwork
+    let isAdded: Bool // Indica si la red social ya está agregada
     let action: () -> Void
 
     var body: some View {
@@ -32,12 +33,21 @@ struct SocialNetworkCell: View {
 
                 Spacer()
 
-                // Icono de "agregar"
-                Image(systemName: "plus.circle.fill")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 24, height: 24)
-                    .foregroundColor(.green)
+                // Icono de checkmark si ya está agregada
+                if isAdded {
+                    Image(systemName: "checkmark.circle.fill")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 24, height: 24)
+                        .foregroundColor(.green)
+                } else {
+                    // Icono de "agregar" si no está agregada
+                    Image(systemName: "plus.circle.fill")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 24, height: 24)
+                        .foregroundColor(.green)
+                }
             }
             .padding()
             .background(Color(.systemBackground)) // Fondo de la celda
@@ -45,5 +55,7 @@ struct SocialNetworkCell: View {
             .shadow(color: Color.black.opacity(0.1), radius: 5, x: 0, y: 2)
         }
         .buttonStyle(PlainButtonStyle()) // Elimina el estilo por defecto del botón
+        .disabled(isAdded) // Deshabilitar la celda si ya está agregada
+        .opacity(isAdded ? 0.6 : 1) // Reducir la opacidad si ya está agregada
     }
 }

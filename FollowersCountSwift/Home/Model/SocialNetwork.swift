@@ -8,8 +8,9 @@
 import Foundation
 
 struct SocialNetwork: Identifiable {
-    let id = UUID()
+    let id = UUID() // Identificador único
     let name: String
+    let socialMediaType: SocialMediaType
     let iconName: String
     var followers: Int
 }

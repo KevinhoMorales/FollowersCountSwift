@@ -10,7 +10,7 @@ import SwiftUI
 struct HomeView: View {
     @StateObject private var homeViewModel = HomeViewModel()
     @StateObject private var addSocialNetworkViewModel = AddSocialNetworkViewModel()
-    
+
     var body: some View {
         NavigationStack {
             VStack {
@@ -19,7 +19,7 @@ struct HomeView: View {
                 } else {
                     SocialNetworksListView(homeViewModel: homeViewModel)
                 }
-                
+
                 AddSocialNetworkButton(homeViewModel: homeViewModel)
             }
             .navigationTitle("Redes Sociales")
@@ -67,7 +67,7 @@ struct EmptySocialNetworksView: View {
 // Subvista para la lista de redes sociales
 struct SocialNetworksListView: View {
     @ObservedObject var homeViewModel: HomeViewModel
-    
+
     var body: some View {
         List {
             ForEach(homeViewModel.socialNetworks) { network in
@@ -82,13 +82,14 @@ struct SocialNetworksListView: View {
                         }
                     }
             }
-            
+
+            // Sección de total de seguidores
             HStack {
-                Text("Total Seguidores")
+                Text("TOTAL") // "TOTAL" en mayúsculas
                     .font(.headline)
                     .foregroundColor(.primary)
                 Spacer()
-                Text("\(homeViewModel.totalFollowers)")
+                Text("\(homeViewModel.totalFollowers) seguidores") // Agrega "seguidores" al número
                     .font(.title3)
                     .fontWeight(.bold)
                     .foregroundColor(.backColor)
@@ -108,7 +109,7 @@ struct SocialNetworksListView: View {
 // Subvista para el botón de agregar red social
 struct AddSocialNetworkButton: View {
     @ObservedObject var homeViewModel: HomeViewModel
-    
+
     var body: some View {
         Button(action: {
             homeViewModel.showAddSocialNetworkView = true
@@ -124,6 +125,7 @@ struct AddSocialNetworkButton: View {
     }
 }
 
+// Previsualización de la vista
 #Preview {
     HomeView()
 }

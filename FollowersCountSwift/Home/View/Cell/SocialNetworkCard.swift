@@ -43,7 +43,7 @@ struct SocialNetworkCard: View {
 
 // Previsualización de la vista
 #Preview {
-    SocialNetworkCard(network: SocialNetwork(name: "Instagram", iconName: "camera.fill", followers: 15000))
+    SocialNetworkCard(network: SocialNetwork(name: "Instagram", socialMediaType: .instagram, iconName: "camera.fill", followers: 15000))
         .previewLayout(.sizeThatFits)
         .padding()
 }

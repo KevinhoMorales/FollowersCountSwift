@@ -2,18 +2,21 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>CFBundleURLTypes</key>
-	<array>
-		<dict>
-			<key>CFBundleTypeRole</key>
-			<string>Editor</string>
-			<key>CFBundleURLName</key>
-			<string>Google</string>
-			<key>CFBundleURLSchemes</key>
-			<array>
-				<string>YOUR_CLIENT_ID.apps.googleusercontent.com</string>
-			</array>
-		</dict>
-	</array>
+    <!-- Configuración de URL Types para Google Sign-In -->
+    <key>CFBundleURLTypes</key>
+    <array>
+        <dict>
+            <key>CFBundleTypeRole</key>
+            <string>Editor</string>
+            <key>CFBundleURLSchemes</key>
+            <array>
+                <string>com.googleusercontent.apps.940066707247-p14o6p961net93k79dnitfvo6qsat6bs</string>
+            </array>
+        </dict>
+    </array>
+
+    <!-- Configuración de GIDClientID para Google Sign-In -->
+    <key>GIDClientID</key>
+    <string>940066707247-p14o6p961net93k79dnitfvo6qsat6bs.apps.googleusercontent.com</string>
 </dict>
 </plist>

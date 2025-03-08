@@ -18,7 +18,6 @@ struct HomeView: View {
             } else {
                 SocialNetworksListView(homeViewModel: homeViewModel)
             }
-
             AddSocialNetworkButton(homeViewModel: homeViewModel)
         }
         .navigationTitle("Redes Sociales")

@@ -11,4 +11,9 @@ enum SocialMediaType {
     case instagram
     case tiktok
     case youtube
+    case twitch
+    case x
+    case bluesky
+    case facebook
+    case linkedin
 }

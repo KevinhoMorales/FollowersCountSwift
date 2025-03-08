@@ -38,7 +38,7 @@ struct AddSocialNetworkView: View {
                         viewModel.selectedNetwork = nil
                     }
                     Button("Agregar", role: .none) {
-                        if let network = viewModel.selectedNetwork {
+                        if let _ = viewModel.selectedNetwork {
                             viewModel.confirmAddNetwork { updatedNetwork in
                                 homeViewModel.validateAndAddSocialNetwork(updatedNetwork) // Usa validateAndAddSocialNetwork
                                 dismiss()

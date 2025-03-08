@@ -16,10 +16,10 @@ struct Constants {
         static let USER_KEY = "USER_KEY"
     }
     
-    struct APIKeys {
+    struct SocialMediaInfo {
         struct Youtube {
-            static let YOUR_API_KEY_HERE = "AIzaSyCQpAgc8VQ3d4cEHatesHAsQHEbKcdb0SE"
-            static let CHANNEL_ID = "UCmy7wdzxcpNBNwgPOiVKy5Q"
+            static let URL = "https://www.googleapis.com/youtube/v3/channels?part=snippet,statistics&mine=true"
+            static let READ_URL = "https://www.googleapis.com/auth/youtube.readonly"
         }
     }
 

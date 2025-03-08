@@ -12,8 +12,13 @@ class AddSocialNetworkViewModel: ObservableObject {
     // MARK: - Published Properties
     @Published var socialNetworks: [SocialNetwork] = [
         SocialNetwork(name: "Instagram", socialMediaType: .instagram, iconName: "camera.fill", followers: 0),
-        SocialNetwork(name: "TikTok", socialMediaType: .tiktok, iconName: "t.square.fill", followers: 0),
-        SocialNetwork(name: "YouTube", socialMediaType: .youtube, iconName: "play.rectangle.fill", followers: 0)
+        SocialNetwork(name: "TikTok", socialMediaType: .tiktok, iconName: "music.note", followers: 0), // TikTok no tiene un ícono oficial en SF Symbols, este es un sustituto
+        SocialNetwork(name: "YouTube", socialMediaType: .youtube, iconName: "play.rectangle.fill", followers: 0),
+        SocialNetwork(name: "Twitch", socialMediaType: .twitch, iconName: "gamecontroller.fill", followers: 0), // Twitch no tiene un ícono oficial, este es un sustituto relacionado con gaming
+        SocialNetwork(name: "X", socialMediaType: .x, iconName: "x.square.fill", followers: 0), // Ícono para X (anteriormente Twitter)
+        SocialNetwork(name: "Bluesky", socialMediaType: .bluesky, iconName: "cloud.fill", followers: 0), // Bluesky no tiene un ícono oficial, este es un sustituto
+        SocialNetwork(name: "Facebook", socialMediaType: .facebook, iconName: "f.circle.fill", followers: 0), // Ícono para Facebook
+        SocialNetwork(name: "LinkedIn", socialMediaType: .linkedin, iconName: "person.crop.square.fill", followers: 0) // LinkedIn no tiene un ícono oficial, este es un sustituto
     ]
 
     @Published var showAlert: Bool = false

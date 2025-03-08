@@ -16,6 +16,16 @@ final class SocialMediaFactory {
             return TikTokFollowersCount()
         case .youtube:
             return YouTubeFollowersCount()
+        case .twitch:
+            return YouTubeFollowersCount()
+        case .x:
+            return YouTubeFollowersCount()
+        case .bluesky:
+            return YouTubeFollowersCount()
+        case .facebook:
+            return YouTubeFollowersCount()
+        case .linkedin:
+            return YouTubeFollowersCount()
         }
     }
 }

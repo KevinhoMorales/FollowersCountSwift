@@ -15,5 +15,12 @@ struct Constants {
     struct Keys {
         static let USER_KEY = "USER_KEY"
     }
+    
+    struct APIKeys {
+        struct Youtube {
+            static let YOUR_API_KEY_HERE = "AIzaSyCQpAgc8VQ3d4cEHatesHAsQHEbKcdb0SE"
+            static let CHANNEL_ID = "UCmy7wdzxcpNBNwgPOiVKy5Q"
+        }
+    }
 
 }

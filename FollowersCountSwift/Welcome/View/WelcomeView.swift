@@ -97,6 +97,7 @@ struct WelcomeView: View {
                 }
             }
         }
+        .navigationBarBackButtonHidden(true)
     }
 }
 

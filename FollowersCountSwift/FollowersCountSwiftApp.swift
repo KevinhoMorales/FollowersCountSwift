@@ -15,7 +15,7 @@ struct FollowersCountSwiftApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            WelcomeView()
         }
     }
 }

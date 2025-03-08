@@ -12,38 +12,36 @@ struct HomeView: View {
     @StateObject private var addSocialNetworkViewModel = AddSocialNetworkViewModel()
 
     var body: some View {
-        NavigationStack {
-            VStack {
-                if homeViewModel.socialNetworks.isEmpty {
-                    EmptySocialNetworksView()
-                } else {
-                    SocialNetworksListView(homeViewModel: homeViewModel)
-                }
+        VStack {
+            if homeViewModel.socialNetworks.isEmpty {
+                EmptySocialNetworksView()
+            } else {
+                SocialNetworksListView(homeViewModel: homeViewModel)
+            }
 
-                AddSocialNetworkButton(homeViewModel: homeViewModel)
-            }
-            .navigationTitle("Redes Sociales")
-            .navigationBarTitleDisplayMode(.large) // Título grande
-            .toolbar {
-                ToolbarItem(placement: .automatic) {
-                    NavigationLink(destination: SettingsView()) {
-                        Image(systemName: "gearshape.fill")
-                            .foregroundColor(.backColor)
-                    }
-                }
-            }
-            .sheet(isPresented: $homeViewModel.showAddSocialNetworkView) {
-                AddSocialNetworkView(viewModel: addSocialNetworkViewModel, homeViewModel: homeViewModel)
-            }
-            .alert("Error", isPresented: .constant(homeViewModel.errorMessage != nil), actions: {
-                Button("OK", role: .cancel) {
-                    homeViewModel.errorMessage = nil
-                }
-            }, message: {
-                Text(homeViewModel.errorMessage ?? "")
-            })
+            AddSocialNetworkButton(homeViewModel: homeViewModel)
         }
-        .navigationBarBackButtonHidden(true) 
+        .navigationTitle("Redes Sociales")
+        .navigationBarTitleDisplayMode(.large) // Título grande
+        .toolbar {
+            ToolbarItem(placement: .automatic) {
+                NavigationLink(destination: SettingsView()) {
+                    Image(systemName: "gearshape.fill")
+                        .foregroundColor(.backColor)
+                }
+            }
+        }
+        .sheet(isPresented: $homeViewModel.showAddSocialNetworkView) {
+            AddSocialNetworkView(viewModel: addSocialNetworkViewModel, homeViewModel: homeViewModel)
+        }
+        .alert("Error", isPresented: .constant(homeViewModel.errorMessage != nil), actions: {
+            Button("OK", role: .cancel) {
+                homeViewModel.errorMessage = nil
+            }
+        }, message: {
+            Text(homeViewModel.errorMessage ?? "")
+        })
+        .navigationBarBackButtonHidden(true)
     }
 }
 
